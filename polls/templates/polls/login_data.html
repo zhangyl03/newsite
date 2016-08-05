@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" href="https://assets.socrative.com/favicon.ico" />
+
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta name="theme-color" content="#8CB4D2" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="google" content="notranslate" />
+  	<meta http-equiv="Content-Language" content="en" />
+	<meta name="MobileOptimized" content="480" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="google-site-verification" content="ArL5R90c597UaAk4Thb5jPAZsrXIvzfhZDeSfdkNkWk" />
+
+    <title>Socrative</title>
+
+    <style>
+        @font-face {font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+        @font-face {font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url(https://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');}
+        @font-face {font-family:'Open Sans';font-style:normal;font-weight:600;src:local('Open Sans Semibold'),local('OpenSans-Semibold'),url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');}
+        @font-face {font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');}
+        @font-face {font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url(https://themes.googleusercontent.com/static/fonts/opensans/v8/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');}
+        @font-face {font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url(https://themes.googleusercontent.com/static/fonts/opensans/v8/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');}
+
+        @font-face {font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');}
+
+        @font-face {font-family:'Roboto Mono';font-style:normal;font-weight:300;src:local('Roboto Mono Light'),local('RobotoMono-Light'),url(https://fonts.gstatic.com/s/robotomono/v4/N4duVc9C58uwPiY8_59Fz_R_54zmj3SbGZQh3vCOwvY.woff) format('woff');}
+    </style>
+
+    <style>@media all and (min-width:1px) {.mediatest {position:absolute}}</style>
+
+	<script type="text/javascript" src="https://assets.socrative.com/libs/pubnub-3.15.2.min.js"></script>
+
+	<script type="text/javascript">
+        window.server_host = ""; //to allow to create static js for the mobile apps
+        window.backend_host = "https://api.socrative.com";
+        if (navigator.userAgent.match(/MSIE (8|9)/))
+        {
+            document.domain = "socrative.com";
+        }
+
+        function gettext(param) {
+        	return param;
+        }
+
+        window.static_url = "https://assets.socrative.com/2.2.63/";
+        window.libs_url   = "https://assets.socrative.com/libs/";
+
+        if (typeof console === 'undefined') {
+            console = {};
+		}
+
+        if (window.PUBNUB) {
+            window.pubnub = window.PUBNUB.init({
+                subscribe_key: 'sub-c-6dcf3cd2-13e8-11e3-8f5a-02ee2ddab7fe',
+                origin: 'pubsub.pubnub.com',
+                ssl: true
+            });
+        } else {
+            alert('There was a problem loading Socrative. Please refresh to try again.');
+        }
+	</script>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.payment_host = "https://pmnt.socrative.com";
+        window.stripe_key = "pk_live_AlBzuQWH5Hg2UwK58L1zPZjC";
+        var ua = navigator.userAgent;
+        var mobile = /iPad/i.test(ua) || /iPhone/i.test(ua) || /iPod/i.test(ua) || /Android/i.test(ua);
+        if (!mobile) {
+            (function(a) {
+                if (window.Stripe){
+                    return
+                }
+                var b = a.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src= "https://js.stripe.com/v2/";
+                var c = a.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b,c);
+            })(document);
+        }
+    </script>
+
+
+    <link type="text/css" rel="stylesheet" href="https://assets.socrative.com/2.2.63/css/login.min.css" />
+
+
+
+
+</head>
+
+<body id="body">
+
+
+
+
+
+	<div id='pubnub' ssl='on'></div>
+
+
+    <script type='text/javascript'>
+        var SOCRATIVE=SOCRATIVE||{};SOCRATIVE.initTemplateLoader={start:function(){document.getElementById("body").insertAdjacentHTML("beforeend",'<div id="loader"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div><div id="loader-message">Loading.</div></div>');var a=0,b=document.getElementById("loader-message"),c=function(){a++,a>9&&(b.innerHTML="Still working on it."),a>16&&(b.innerHTML="We're making progress."),a>24&&(b.innerHTML="Did you know? Socrative supports teachers in over 150 countries!"),a>34&&(b.innerHTML="Did you know? Socrative users have created over 6 million quizzes!")};this.intervalId=setInterval(c,1e3)},stop:function(){var a=document.getElementById("loader");null!=a&&a.parentNode.removeChild(a),clearInterval(this.intervalId)}},SOCRATIVE.checkTime={start:function(){var a=this,b=function(){SOCRATIVE.initTemplateLoader.start(),a.reset()};this.intervalId=setInterval(b,3e3)},reset:function(){clearInterval(this.intervalId)}},SOCRATIVE.checkTime.start();
+    </script>
+
+    <script type="text/javascript" src="https://assets.socrative.com/2.2.63/js/commons.js"></script>
+
+
+
+        <script type="text/javascript" src="https://assets.socrative.com/2.2.63/js/login.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+		<script type="text/javascript">
+		 	window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8"
+		 	 ,window.analytics.load("uq6f8f6utp")
+		 	;
+		 </script>
+
+
+</body>
+</html>

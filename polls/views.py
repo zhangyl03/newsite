@@ -21,7 +21,7 @@ class IndexView(generic.ListView):
 #    return render(request, 'polls/index.html', context)
 
 def home(request):
-    return render(request, 'polls/home.html')
+    return render(request, 'polls/homepage.html')
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

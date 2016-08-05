@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'tech_rd_lv_db',
         'USER':'root',
         'PASSWORD':'root0123',
-        'HOST':'120.55.71.176',
+        'HOST':'127.0.0.1',
         'PORT':3306,
     }
 }

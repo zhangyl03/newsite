@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>技术成熟度评估层次</title>
+</head>
+<body>
+    <ul>
+        {% for exam in latest_exam_list %}
+            <li><a href="{%  url 'polls:easy_tables' exam.id %}">TRL {{ exam.id }}评价表单</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

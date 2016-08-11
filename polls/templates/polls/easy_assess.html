@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初步评估</title>
+</head>
+<body>
+    <div>
+        <form>
+            <ol>
+                <li>
+                    <label>技术所属行业</label>
+                    <select>
+                        <option value="NengYuan">能源</option>
+                        <option value="DianLi">电力</option>
+                        <option value="YouSe">有色金属</option>
+                        <option value="JiSuanJi">计算机</option>
+                        <option value="JiXie">机械</option>
+                        <option value="YiYao">医药</option>
+                        <option value="QiTa">其他...</option>
+                    </select>
+                </li>
+                <li>
+                    <label>技术名称</label>
+                    <input id="q1" name="TechName" type="text" required/>
+                </li>
+                <li>
+                    <label>技术属性</label>
+                    <div>
+                        <span><input id="q3b" name="q3" type="radio" value="YingJian"/><label for="q3b" class="radio-YingJian">硬件技术</label></span>
+                        <span><input id="q3c" name="q3" type="radio" value="RuanJian"/><label for="q3c" class="radio-RuanJian">软件技术</label></span>
+                    </div>
+                </li>
+            </ol>
+        </form>
+        <a href="{% url 'polls:easy_index' %}"><button type="submit">确定</button></a>
+    </div>
+</body>
+</html>

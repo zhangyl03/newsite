@@ -1,0 +1,9 @@
+{% if exam_list %}
+    <ul>
+        {% for exam in exam_list %}
+            <li>{{ exam.id }} {{ exam.exam_text }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>ERROR, no tables are available.</p>
+{% endif %}

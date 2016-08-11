@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Question, Choice
+from .models import Question, Choice, Exam
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
@@ -17,4 +17,10 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['question_text']
 
+class ExamAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['exam_text']}),
+    ]
+
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Exam, ExamAdmin)

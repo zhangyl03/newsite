@@ -4,7 +4,7 @@ from django.template import loader
 from django.core.urlresolvers import reverse
 from django.views import generic
 
-from .models import Question, Choice, Exam
+from .models import Question, Choice, Exam, Grades, User
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -30,9 +30,43 @@ def easy_assess(request):
 
 
 def easy_index(request):
-    latest_exam_list = Exam.objects.order_by('id')[:9]
-    context = {'latest_exam_list': latest_exam_list}
+    write_database_easy_assess(request)
+    exam_list = Exam.objects.order_by('id')[:68]
+    exam_list_1 = Exam.objects.order_by('id')[:3]
+    exam_list_2 = Exam.objects.order_by('id')[3:8]
+    exam_list_3 = Exam.objects.order_by('id')[8:19]
+    exam_list_4 = Exam.objects.order_by('id')[19:28]
+    exam_list_5 = Exam.objects.order_by('id')[28:39]
+    exam_list_6 = Exam.objects.order_by('id')[39:50]
+    exam_list_7 = Exam.objects.order_by('id')[50:60]
+    exam_list_8 = Exam.objects.order_by('id')[60:65]
+    exam_list_9 = Exam.objects.order_by('id')[65:68]
+    context = {'exam_list': exam_list, 'exam_list_1': exam_list_1, 'exam_list_2':exam_list_2,
+               'exam_list_3': exam_list_3, 'exam_list_4':exam_list_4, 'exam_list_5':exam_list_5,
+               'exam_list_6': exam_list_6, 'exam_list_7':exam_list_7, 'exam_list_8':exam_list_8,
+               'exam_list_9': exam_list_9}
     return render(request, 'polls/easy_index.html', context)
+
+
+def write_database_easy_assess(request):
+    if request.method == 'POST':
+        for key in request.POST:
+            print(key)
+            valuelist = request.POST.getlist(key)
+            print(valuelist)
+    else:
+        print("no post!")
+    u_1 = User(user_name=request.POST.getlist('q1'), e_mail=request.POST.getlist('q2'),
+               cell_phone=12345, pass_word='12345', work_place='workplace')
+    u_1.save()
+    p_1 = Grades(tech_name=request.POST.getlist('q4'), tech_type=request.POST.getlist('q3'),
+                 tech_note=request.POST.getlist('q5'), author_id=u_1.id,
+                 exam_item='')
+    p_1.save()
+
+
+def read_database():
+    pass
 
 
 def easy_tables(request, exam_lv):
@@ -59,6 +93,27 @@ def easy_tables(request, exam_lv):
         exam_list.append(get_object_or_404(Exam, pk=number))
     context = {'exam_list': exam_list}
     return render(request, 'polls/easy_tables.html', context)
+
+
+def easy_submit(request):
+    grade = 20
+    if request.method == 'POST':
+        for key in request.POST:
+            value = request.POST.getlist(key)
+            print(value)
+            if value == ['Yes']:
+                grade += 1
+    else:
+        print("no post!")
+    risk = 100 - grade
+    if grade < 40:
+        discussion = '技术风险较大，建议谨慎投资。'
+    elif grade < 75:
+        discussion = '技术风险一般，建议进行产业开发。'
+    else:
+        discussion = '技术风险小。'
+    context = {'grade':grade,'risk':risk, 'discussion':discussion}
+    return render(request, 'polls/easy_submit.html', context)
 
 
 def query(request):

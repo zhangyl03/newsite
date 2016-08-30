@@ -1,9 +1,21 @@
-{% if exam_list %}
-    <ul>
-        {% for exam in exam_list %}
-            <li>{{ exam.id }} {{ exam.exam_text }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>ERROR, no tables are available.</p>
-{% endif %}
+<form action = "{% url 'polls:easy_index' %}" method="post">
+    {% csrf_token %}
+    {% if exam_list %}
+        <ul>
+            {% for exam in exam_list %}
+                <li>{{ exam.id }} {{ exam.exam_text }}</li>
+                <input type = "radio" name="choice{{ forloop.counter }}" id="choice1_{{ forloop.counter }}" value="Yes"/>
+                <label for="choice{{ forloop.counter }}">是</label>
+
+                <input type = "radio" name="choice{{ forloop.counter }}" id="choice2_{{ forloop.counter }}" value="No"/>
+                <label for="choice{{ forloop.counter }}">否</label>
+
+                <input type = "radio" name="choice{{ forloop.counter }}" id="choice3_{{ forloop.counter }}" value="Unknown"/>
+                <label for="choice{{ forloop.counter }}">不知道/无关问题</label>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>ERROR, no tables are available.</p>
+    {% endif %}
+    <input type="submit" value="确定" />
+</form>

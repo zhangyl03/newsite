@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Amarante', cursive;
+  background: url(http://www.w3cplus.com/sites/default/files/bg_body.png) repeat;
+  text-align: center; /*IE6下让元素居中*/
+}
+
+/*===================================================*\
+ *                                                   *
+ *   Layout                                          *
+ *  .wrapper宽度=.sidebar宽度+间距+.main-content宽度 *
+ *                                                   *
+\*===================================================*/
+.wrapper {
+  width: 960px; /*页面总宽度*/
+  margin: 0 auto; /*水平居中*/
+  text-align: left; /*重置文本对齐方式*/
+}
+
+.header {
+  margin-bottom: 5px; /*顶部与主内容垂直间距，可自行修改*/
+}
+
+.sidebar {
+  width: 220px; /*左边栏宽度，可自行修改*/
+  margin-right: 20px; /*边栏间距，可自行修改*/
+  display: inline; /*防止IE6双边距*/
+  float: left;
+  margin-bottom: 5px; /*边栏与footer之间的垂直间距，可自行修改*/
+}
+
+.main-content {
+  width: 720px; /*主内容宽度*/
+  display: inline; /*防止IE6又边距*/
+  float: left;
+  margin-bottom: 5px; /*主内容与footer之间的垂直间距，可自行修改*/
+}
+
+.footer {
+  clear: both; /*清除浮动，非常重要，不可缺少*/
+}
+
+/*===================================================*\
+ *                                                   *
+ *   装饰样式，可自行修改                            *
+ *                                                   *
+\*===================================================*/
+.header {
+  height: 75px;
+  background-color: #BD9C8C;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  height: 350px;
+  background-color: #E7DBD5;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  background-color: #F2F2E6;
+  height: 350px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #BD9C8C;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+}

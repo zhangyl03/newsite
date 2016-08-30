@@ -51,10 +51,11 @@ class Exam(models.Model):
 
 
 class Grades(models.Model):  # the class is used to save different grades of each question by different people
-    exam_item = models.ForeignKey(Exam)
+    exam_item = models.CharField(max_length=68)
     author = models.ForeignKey(User)
     tech_name = models.CharField(max_length=50)
     tech_type = models.CharField(max_length=50)
     grade = models.IntegerField(default=0)
+    tech_note = models.CharField(max_length=200, default='')
 
 

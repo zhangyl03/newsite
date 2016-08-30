@@ -1,39 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>初步评估</title>
-</head>
-<body>
-    <div>
-        <form>
-            <ol>
-                <li>
-                    <label>技术所属行业</label>
-                    <select>
-                        <option value="NengYuan">能源</option>
-                        <option value="DianLi">电力</option>
-                        <option value="YouSe">有色金属</option>
-                        <option value="JiSuanJi">计算机</option>
-                        <option value="JiXie">机械</option>
-                        <option value="YiYao">医药</option>
-                        <option value="QiTa">其他...</option>
-                    </select>
-                </li>
-                <li>
-                    <label>技术名称</label>
-                    <input id="q1" name="TechName" type="text" required/>
-                </li>
-                <li>
-                    <label>技术属性</label>
-                    <div>
-                        <span><input id="q3b" name="q3" type="radio" value="YingJian"/><label for="q3b" class="radio-YingJian">硬件技术</label></span>
-                        <span><input id="q3c" name="q3" type="radio" value="RuanJian"/><label for="q3c" class="radio-RuanJian">软件技术</label></span>
-                    </div>
-                </li>
-            </ol>
-        </form>
-        <a href="{% url 'polls:easy_index' %}"><button type="submit">确定</button></a>
-    </div>
-</body>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% load staticfiles %}
+        <title>基本评估</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'query/css/normalize.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'query/css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'query/css/component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'query/css/cs-select.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'query/css/cs-skin-boxes.css' %}" />
+		<script src="{% static 'query/js/modernizr.custom.js' %}"></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>基本信息</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action = "{% url 'polls:easy_index' %}" method="POST">
+                    {% csrf_token %}
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">您的姓名/账号</label>
+							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">联系邮箱</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/>
+						</li>
+                        <li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" data-info="This will help us know what kind of service you need">技术所属大类</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q3b" name="q3" type="radio" value="NengYuan"/><label for="q3b" class="radio-conversion">能源</label></span>
+								<span><input id="q3c" name="q3" type="radio" value="DianLi"/><label for="q3c" class="radio-conversion">电力</label></span>
+								<span><input id="q3d" name="q3" type="radio" value="JiXie"/><label for="q3d" class="radio-conversion">机械</label></span>
+                                <span><input id="q3e" name="q3" type="radio" value="WangLuo"/><label for="q3e" class="radio-conversion">网络</label></span>
+                                <span><input id="q3f" name="q3" type="radio" value="JiSuanJi"/><label for="q3f" class="radio-conversion">计算机</label></span>
+                                <span><input id="q3g" name="q3" type="radio" value="YiYao"/><label for="q3g" class="radio-conversion">医药</label></span>
+                                <span><input id="q3h" name="q3" type="radio" value="ShengWu"/><label for="q3h" class="radio-conversion">生物</label></span>
+                                <span><input id="q3i" name="q3" type="radio" value="YiYao"/><label for="q3i" class="radio-conversion">环保</label></span>
+                                <span><input id="q3a" name="q3" type="radio" value="QiTa"/><label for="q3a" class="radio-conversion">其它</label></span>
+							</div>
+						</li>
+                        <li>
+							<label class="fs-field-label fs-anim-upper" for="q4">技术名称</label>
+							<input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="Tech name" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q5">简要描述技术功能</label>
+							<textarea class="fs-anim-lower" id="q5" name="q5" placeholder="Describe here"></textarea>
+						</li>
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit">确定</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		</div><!-- /container -->
+		<script src="{% static 'query/js/classie.js' %}"></script>
+		<script src="{% static 'query/js/selectFx.js' %}"></script>
+		<script src="{% static 'query/js/fullscreenForm.js' %}"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
 </html>

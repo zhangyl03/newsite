@@ -29,6 +29,10 @@ def about(request):
     return render(request, 'polls/about.html')
 
 
+def contact_us(request):
+    return render(request, 'polls/contact_us.html')
+
+
 def easy_assess(request):
     return render(request, 'polls/easy_assess.html')
 

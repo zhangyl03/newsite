@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^about/',views.about, name='about'),
+    url(r'^contact_us', views.contact_us, name='contact_us'),
 ]

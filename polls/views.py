@@ -110,8 +110,10 @@ def easy_submit(request):
         discussion = '技术风险较大，建议谨慎投资。'
     elif grade < 75:
         discussion = '技术风险一般，建议进行产业开发。'
-    else:
+    elif grade < 90:
         discussion = '技术风险小。'
+    else:
+        discussion = '技术已成熟，技术风险几乎不存在。'
     context = {'grade':grade,'risk':risk, 'discussion':discussion}
     return render(request, 'polls/easy_submit.html', context)
 

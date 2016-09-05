@@ -25,6 +25,10 @@ def home(request):
     return render(request, 'polls/homepage.html')
 
 
+def about(request):
+    return render(request, 'polls/about.html')
+
+
 def easy_assess(request):
     return render(request, 'polls/easy_assess.html')
 

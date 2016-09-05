@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^about/',views.about, name='about'),
 ]

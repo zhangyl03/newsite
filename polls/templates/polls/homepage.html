@@ -26,7 +26,7 @@
 						<li><a href="{% url 'polls:easy_assess' %}">基本评估</a></li>
 						<li><a href="{% url 'polls:query' %}">专业评估</a></li>
 						<li><a href="#">专家入口</a></li>
-						<li><a href="#">关于</a></li>
+						<li><a href="{% url 'about' %}">关于</a></li>
 						<li><a href="#">联系我们</a></li>
 					</ul>
 					<a href="#" class="login_btn">注册账户</a>
@@ -82,110 +82,38 @@
 			<ul class="properties_list">
 				<li>
 					<a href="#">
-						<img src="img/property_1.jpg" alt="" title="" class="property_img"/>
+						<img src="{% static 'La Casa/img/litikuaiba.jpg' %}" alt="" title="" class="property_img"/>
 					</a>
-					<span class="price">$2500</span>
+					<span class="price">技术风险：54%</span>
 					<div class="property_details">
 						<h1>
 							<a href="#">示范案例</a>
 						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
+						<h2>立体快巴 <span class="property_size">(TRL 5)</span></h2>
 					</div>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/property_2.jpg" alt="" title="" class="property_img"/>
+						<img src="{% static 'La Casa/img/heilin.jpg' %}" alt="" title="" class="property_img"/>
 					</a>
-					<span class="price">$1000</span>
+					<span class="price">技术风险：79%</span>
 					<div class="property_details">
 						<h1>
 							<a href="#">示范案例</a>
 						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
+						<h2>黑磷二维材料 <span class="property_size">(TRL 3)</span></h2>
 					</div>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/property_3.jpg" alt="" title="" class="property_img"/>
+						<img src="{% static 'La Casa/img/shimoxi.jpg' %}" alt="" title="" class="property_img"/>
 					</a>
-					<span class="price">$500</span>
+					<span class="price">技术风险：70%</span>
 					<div class="property_details">
 						<h1>
 							<a href="#">示范案例</a>
 						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_1.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$2500</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_2.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$1000</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_3.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$500</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_1.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$2500</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_2.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$1000</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
-					</div>
-				</li>
-				<li>
-					<a href="#">
-						<img src="img/property_3.jpg" alt="" title="" class="property_img"/>
-					</a>
-					<span class="price">$500</span>
-					<div class="property_details">
-						<h1>
-							<a href="#">示范案例</a>
-						</h1>
-						<h2>示范技术 <span class="property_size">(288ftsq)</span></h2>
+						<h2>石墨烯电池 <span class="property_size">(TRL 4)</span></h2>
 					</div>
 				</li>
 			</ul>
@@ -229,11 +157,11 @@
 				</li>
 
 				<li class="about">
-					<p>La Casa is real estate minimal html5 website template, designed and coded by pixelhint, tellus varius, dictum erat vel, maximus tellus. Sed vitae auctor ipsum</p>
+					<p>源于NASA的技术评估方法，技术问题，专业解答。专注技术评估与风险控制。</p>
 					<ul>
-						<li><a href="http://facebook.com/pixelhint" class="facebook" target="_blank"></a></li>
-						<li><a href="http://twitter.com/pixelhint" class="twitter" target="_blank"></a></li>
-						<li><a href="http://plus.google.com/+Pixelhint" class="google" target="_blank"></a></li>
+						<li><a href="#" class="facebook" target="_blank"></a></li>
+						<li><a href="#" class="twitter" target="_blank"></a></li>
+						<li><a href="#" class="google" target="_blank"></a></li>
 						<li><a href="#" class="skype"></a></li>
 					</ul>
 				</li>
@@ -241,7 +169,7 @@
 		</div>
 
 		<div class="copyrights wrapper">
-			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
+			Copyright © 2016 <a href="#" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
 		</div>
 	</footer><!--  end footer  -->
 	
